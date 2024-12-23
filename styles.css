@@ -9,17 +9,23 @@ html {
   scroll-behavior: smooth;
 }
 body {
-  width: 1920px;
+  width: 100%;
   height: 4290px;
 }
 header {
+  text-wrap: nowrap;
   position: relative;
   box-sizing: border-box;
   padding: 0 110px;
   display: flex;
   align-items: center;
-  width: 1920px;
+  width: 100%;
   height: 90px;
+}
+.buttons-head {
+  display: flex;
+  justify-self: right;
+  margin-left: auto;
 }
 .logo img {
   width: 252px;
@@ -28,7 +34,6 @@ header {
 .navbar {
   display: flex;
   margin-left: 73px;
-  margin-right: 355px;
 }
 
 .navbar ul {
@@ -40,9 +45,10 @@ header {
   display: flex;
   gap: 48px;
 }
-.navbar ul > li:first-child {
+.navbar ul li:hover {
   color: rgba(71, 192, 207, 1);
 }
+
 .navbar ul > li:first-child::after {
   content: "";
   position: absolute;
@@ -55,6 +61,8 @@ header {
 }
 
 .language {
+  margin-left: 16px;
+  align-self: flex-end;
   margin-right: 16px;
   display: flex;
   justify-content: space-around;
@@ -117,6 +125,7 @@ header {
   height: 6px;
   width: 12px;
   position: absolute;
+
   left: 470px;
   top: -8px;
 }
@@ -124,9 +133,13 @@ main {
   position: relative;
 }
 .back {
-  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: clip;
+  z-index: 0;
   height: 924px;
-  width: 1920px;
+  width: 100%;
   background: linear-gradient(
     221.4deg,
     rgba(204, 233, 237, 0.8) 26.55%,
@@ -134,21 +147,47 @@ main {
   );
 }
 .phonepic {
-  position: absolute;
-  width: 988px;
-  height: 776px;
-  top: 67px;
-  left: 767px;
+  overflow: hidden; /* Ensure clipping works properly */
+  z-index: 1;
+  width: 100%; /* Full width of the container */
+  height: auto; /* Adjust height as needed */
+  position: relative; /* Maintain proper stacking context */
+  bottom: 8px;
 }
+
+/* Image inside .phonepic */
+.phonepic img {
+  display: block;
+  margin: 0 auto;
+  width: 160%;
+  position: relative;
+  right: 40%;
+  height: auto;
+  object-fit: cover;
+}
+
 .content {
-  position: absolute;
-  width: 721px;
+  position: relative;
+  display: block;
+  width: 1721px;
   height: 282px;
-  top: 309px;
-  left: 288px;
+  justify-self: right;
   border: 1px;
 }
+.first-container {
+  position: relative;
+  z-index: 10000;
+  width: 1401px;
+  display: flex;
+  overflow: clip;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: nowrap;
+  top: -32px;
+}
 .content-header-top {
+  text-wrap: nowrap;
+
   margin-bottom: 4px;
   font-family: Poppins;
   font-size: 32px;
@@ -160,6 +199,8 @@ main {
   text-decoration-skip-ink: none;
 }
 .content-header-bottom {
+  text-wrap: nowrap;
+
   margin-bottom: 6px;
   font-family: Poppins;
   font-size: 40px;
@@ -170,10 +211,12 @@ main {
   text-underline-position: from-font;
   text-decoration-skip-ink: none;
 }
+
 .blue-text {
   color: rgba(71, 192, 207, 1);
 }
 .content-text {
+  width: 721px;
   font-family: Inter;
   font-size: 16px;
   font-weight: 500;
@@ -204,19 +247,21 @@ main {
 }
 
 .first-tab {
+  position: relative;
+  z-index: 999;
   display: flex;
   flex-direction: column;
-  position: absolute;
   width: 1401px;
   height: 3014px;
-  top: 810px;
-  left: 264px;
+  margin: auto;
+  margin-top: -107px;
   border-radius: 20px;
   background-color: rgba(255, 255, 255, 1);
   box-shadow: 0px -60px 190px 0px rgba(0, 0, 0, 0.06);
 }
 
 .stats {
+  z-index: 99;
   margin: 24px 33px 0 24px;
   display: flex;
   justify-content: space-evenly;
@@ -271,7 +316,6 @@ main {
 
 .us-text {
   box-sizing: border-box;
-  width: 542px;
   height: 280px;
 }
 .us-photo {
@@ -431,6 +475,7 @@ main {
   justify-content: center;
   background: linear-gradient(271.72deg, #e9fdff 27.98%, #d1f1f5 96.4%);
 }
+
 .safe-depo {
   width: 492px;
   height: 124px;
@@ -483,12 +528,24 @@ main {
   line-height: 18px;
   padding-bottom: 1px;
 }
-.safe-img {
-  width: 882px;
-  height: 773px;
+/* Container for the image */
+/* Container for the image */
+.safe-image-div {
   position: absolute;
-  left: 563px;
-  transform: translateY(9.2%);
+  top: -192px; /* Align the container to the top */
+  left: 739px; /* Adjust horizontal position as needed */
+  height: 773px; /* Set the desired height for the container */
+  overflow: hidden; /* Hide the part of the image outside the container */
+}
+
+/* Image inside the container */
+.safe-img {
+  left: auto; /* Reset left adjustment */
+  right: auto; /* Reset right adjustment */
+  width: 100%; /* Decrease the width to crop the sides */
+  height: 100%; /* Keep the height consistent */
+  margin: 0 auto; /* Center the image horizontally */
+  object-fit: cover; /* Ensure it still covers the container */
 }
 
 .pack {
@@ -641,12 +698,13 @@ main {
 }
 
 .second-tab {
+  position: relative;
+  z-index: 9999;
   display: flex;
-  position: absolute;
   width: 1296px;
   height: 340px;
-  top: 3637px;
-  left: 312px;
+  margin: auto;
+  margin-top: -153px;
   border-radius: 12px;
   background-color: rgba(255, 255, 255, 1);
   box-shadow: 0px 20px 110px -3px rgba(0, 0, 0, 0.06);
@@ -749,11 +807,10 @@ main {
   left: -203px;
 }
 footer {
-  position: absolute;
   width: 1248px;
   height: 188px;
-  top: 4025px;
-  left: 336px;
+  margin: auto;
+  margin-top: 38px;
   display: flex;
   flex-direction: row;
 }
@@ -839,6 +896,8 @@ footer {
 button:hover,
 li:hover {
   cursor: pointer;
+}
+nav ul li:hover::after {
 }
 input:focus {
   border: none;
