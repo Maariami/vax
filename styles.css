@@ -48,16 +48,20 @@ header {
 .navbar ul li:hover {
   color: rgba(71, 192, 207, 1);
 }
+.logo {
+  position: relative;
+}
 
-.navbar ul > li:first-child::after {
+.logo::after {
   content: "";
   position: absolute;
   display: flex;
   background-color: rgba(243, 243, 243, 1);
   width: 1px;
   height: 48px;
-  top: 21px;
-  left: 386px;
+  bottom: 50%;
+  transform: translateY(50%);
+  right: -24px;
 }
 
 .language {
@@ -897,8 +901,7 @@ button:hover,
 li:hover {
   cursor: pointer;
 }
-nav ul li:hover::after {
-}
+
 input:focus {
   border: none;
   outline: none;
