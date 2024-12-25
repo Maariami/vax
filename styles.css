@@ -872,8 +872,7 @@ button:hover,
 li:hover {
   cursor: pointer;
 }
-nav ul li:hover::after {
-}
+
 input:focus {
   border: none;
   outline: none;
