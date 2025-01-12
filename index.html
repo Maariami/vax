@@ -38,10 +38,12 @@
 
         <button class="signin">Sign in</button>
         <button class="createaccount">Create Account</button>
+        <button class="burger-menu"><img src="burgermenu.png" alt="" /></button>
       </div>
     </header>
     <main>
       <section class="back">
+        <img class="arrowback" src="arrowsinback.png" alt="" />
         <div class="first-container">
           <section class="content">
             <div class="content-header">
@@ -52,13 +54,20 @@
                 Deadline for contribution
                 <span class="blue-text">25 February</span>
               </p>
+              <p class="content-header-top -hidden">
+                Choose your package and join our journey
+              </p>
             </div>
             <p class="content-text">
-              Our trading charts provide a complete picture of live currency,
-              stocks and commodities price movements and underpin successful
-              technical analysis. Identify patterns and trends and respond to
-              price action more effectively by typing in your chosen asset and
-              applying.
+              Our trading charts provide a complete picture of live
+              <span class="hidden-text">
+                currency, stocks and commodities price movements and underpin
+                successful technical analysis.
+              </span>
+              Identify patterns and trends and
+              <span class="hidden-text"> respond to</span> price action more
+              effectively by typing in your
+              <span class="hidden-text"> chosen asset and applying.</span>
             </p>
             <button class="invest">
               Start Investing <img src="/pictures/arrow-right.svg" alt="" />
@@ -169,7 +178,7 @@
         </section>
 
         <section class="blocks">
-          <div class="plan">
+          <div id="plan1" class="plan">
             <div class="plan-logo-block">
               <img class="plan-logo" src="/pictures/orange.png" alt="" />
             </div>
@@ -204,7 +213,7 @@
             </ul>
           </div>
 
-          <div class="plan">
+          <div id="plan2" class="plan">
             <div class="plan-logo-block">
               <img class="plan-logo" src="/pictures/purple.png" alt="" />
             </div>
@@ -239,7 +248,7 @@
             </ul>
           </div>
 
-          <div class="plan">
+          <div id="plan3" class="plan">
             <div class="plan-logo-block">
               <img class="plan-logo" src="/pictures/blue.png" alt="" />
             </div>
@@ -274,7 +283,7 @@
             </ul>
           </div>
 
-          <div class="plan">
+          <div id="plan4" class="plan">
             <div class="plan-logo-block">
               <img class="plan-logo" src="/pictures/cyan.png" alt="" />
             </div>
@@ -309,7 +318,14 @@
             </ul>
           </div>
         </section>
+        <div class="pagination">
+          <a href="#plan1" class="pagination-dot"></a>
+          <a href="#plan2" class="pagination-dot"></a>
+          <a href="#plan3" class="pagination-dot"></a>
+          <a href="#plan4" class="pagination-dot"></a>
+        </div>
       </section>
+
       <section class="second-tab">
         <div class="posta">
           <img class="letter" src="/pictures/posta.png" alt="" />
