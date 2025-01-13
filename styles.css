@@ -787,29 +787,30 @@ main {
 
 footer {
   max-width: 1248px;
-  height: 188px;
+  height: auto;
   margin: auto;
   margin-top: 38px;
   display: flex;
   flex-direction: row;
+  padding-bottom: 77px;
 }
 .foot-left {
   box-sizing: border-box;
-  padding-bottom: 29px;
   display: flex;
   flex-direction: column;
   width: 50%;
-
-  height: 188px;
-
   justify-content: space-between;
 }
 .foot-right {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  width: 648px;
+  width: 100%;
+  gap: 120px;
   height: 188px;
+}
+.foot-right div {
+  width: auto;
 }
 .foot-logo {
   width: 198.95px;
@@ -817,7 +818,6 @@ footer {
 }
 .foot-text {
   width: 388px;
-  height: 54px;
   color: rgba(166, 166, 166, 1);
   font-family: Inter;
   font-size: 12px;
@@ -885,7 +885,8 @@ input:focus {
   outline: none;
 }
 .logopatara,
-.-hidden {
+.-hidden,
+.foot-lang {
   display: none;
 }
 .burger-menu {
@@ -895,6 +896,10 @@ input:focus {
   border-radius: 23px;
   background-color: #f1f1f1;
   display: none;
+}
+.foot-right a:hover {
+  color: rgba(71, 192, 207, 1);
+  text-decoration: underline;
 }
 @media only screen and (max-width: 1400px) {
   .logopatara {
@@ -918,6 +923,7 @@ input:focus {
   .hidden-text {
     display: none;
   }
+
   .burger-menu {
     display: block;
   }
@@ -974,14 +980,21 @@ input:focus {
     text-decoration-skip-ink: none;
   }
   .content-text {
-    max-width: 337px;
+    max-width: 300px;
     font-size: 14px;
     font-weight: 500;
     line-height: 20px;
     letter-spacing: -0.03em;
-    text-align: center;
+    text-align: left;
     text-underline-position: from-font;
     text-decoration-skip-ink: none;
+    color: rgba(166, 166, 166, 1);
+  }
+  .content.header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
   }
   .arrowback {
     bottom: 0;
@@ -989,6 +1002,8 @@ input:focus {
   }
 
   .stats {
+    margin: auto;
+    margin-top: 24px;
     grid-template-rows: 1fr 1fr 1fr;
     grid-template-columns: 1fr;
     gap: 16px;
@@ -997,6 +1012,7 @@ input:focus {
     padding: 24px;
   }
   .us {
+    height: auto;
     margin: auto;
     grid-template-rows: 1fr 1fr;
     grid-template-columns: 1fr;
@@ -1019,6 +1035,8 @@ input:focus {
     justify-items: left;
     text-align: left;
     padding: 16px;
+    gap: 8px;
+    padding-bottom: 0;
   }
   .us-header {
     margin: 0;
@@ -1046,12 +1064,13 @@ input:focus {
   }
   .more {
     margin: auto;
+    margin-top: 8px;
     gap: 8px;
     width: 100%;
   }
   .comp-photo {
     grid-row: 1;
-    width: 300px;
+    width: auto;
   }
   .comp-photo img {
     width: 100%;
@@ -1182,7 +1201,39 @@ input:focus {
     text-decoration-skip-ink: none;
   }
   .second-tab {
-    margin-top: 90px;
+    padding: 16px;
+    padding-bottom: 0;
+    display: grid;
+    grid-template-rows: auto auto;
+    grid-template-columns: auto;
+    margin-top: -18px;
+    justify-items: center;
+    height: auto;
+    row-gap: 41px;
+  }
+  .subscribe {
+    width: auto;
+    height: auto;
+    grid-row: 1;
+    gap: 4px;
+  }
+  .subs-input {
+    position: relative;
+    min-width: 100%;
+    margin-top: 24px;
+  }
+  .send-btn {
+    position: absolute;
+    top: 33px;
+    left: 81%;
+  }
+  .subs-text {
+    height: auto;
+    max-width: 295px;
+  }
+  .posta {
+    position: relative;
+    bottom: -3px;
   }
   .first-tab {
     height: 100%;
@@ -1240,5 +1291,66 @@ input:focus {
   #plan3:target ~ .pagination a:nth-child(3),
   #plan4:target ~ .pagination a:nth-child(4) {
     background-color: rgba(71, 192, 207, 1);
+  }
+  .social-media {
+    align-items: center;
+  }
+  .foot-lang {
+    display: flex;
+    flex-direction: row;
+    gap: 4px;
+    width: auto;
+    padding: 8px;
+    border-radius: 6px;
+    background-color: rgba(237, 237, 237, 1);
+    margin-left: auto;
+  }
+  .foot-lang img {
+    width: 100%;
+  }
+  .foot-lang .triangle {
+    margin-left: 4px;
+  }
+
+  .foot-right .remove {
+    display: none;
+  }
+  .foot-text {
+    text-wrap: wrap;
+    width: 295px;
+  }
+  footer {
+    display: grid;
+    grid-template-rows: auto auto;
+    grid-template-columns: auto;
+    gap: 48px;
+    justify-items: center;
+    justify-content: center;
+  }
+  .foot-left {
+    width: auto;
+    gap: 24px;
+  }
+  .foot-right {
+    justify-content: left;
+    max-width: 327px;
+  }
+  .letter {
+    object-fit: fill;
+    width: 100%;
+  }
+  .content .content-text {
+    margin-top: 8px;
+    margin-bottom: 18px;
+    text-align: center;
+  }
+  .invest {
+    margin-top: 0;
+  }
+  .content-header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
   }
 }
